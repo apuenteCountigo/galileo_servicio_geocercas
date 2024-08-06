@@ -1,0 +1,20 @@
+=== Verbos HTTP
+
+.Verbos usados en las peticiones REST
+[cols="20,80",options="header"]
+|===
+| Verbo | Uso
+
+| `GET`
+| Obtener un recurso.
+
+| `POST`
+| Obtener un recurso basado en información proporcionada en un objeto. Agregar algún recurso.
+
+| `PUT`
+| Actualizar un recurso
+
+| `DELETE`
+| Eliminar un recurso
+
+|===

@@ -1,0 +1,32 @@
+[[overview]]
+= Generales
+
+include::overview/description.adoc[]
+
+
+[[overview-http-verbs]]
+include::overview/http-verbs.adoc[]
+
+
+[[overview-http-status-codes]]
+include::overview/http-status-codes.adoc[]
+
+[[overview-http-error]]
+=== Error
+En caso que el servicio retorne algún error de los tipos 4XX o 5XX se retornará un objeto con los siguientes parámetros.
+
+//include::{snippets}/search-controller-integration-test/error/response-fields.adoc[]
+
+==== Ejemplo de respuesta
+
+//include::{snippets}/search-controller-integration-test/error/http-response.adoc[]
+
+
+[[overview-hypermedia]]
+=== Hipermedia
+
+Los servicios REST implementados, utilizan hipermedia. Los recursos
+incluyen enlaces a otros recursos en sus respuestas. Estos enlaces están
+en formato `HAL (Hypertext Application Language)`. Los enlaces pueden encontrarse
+debajo del atributo `_links`. Los clientes pueden usar los enlaces descritos para navegar.
+Cada entidad puede contener un enlace `_self`, que es un enlace al mismo recurso.

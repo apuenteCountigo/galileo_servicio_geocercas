@@ -1,0 +1,127 @@
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+include::overview/header.adoc[]
+
+include::overview.adoc[]
+
+[[rest-api]]
+== Servicios para el trabajo con las geocercas
+
+[[get-ceocercas]]
+=== Obtener las geocercas de una baliza
+Con una solicitud `POST` se obtiene una entidad con toda la información de las geocercas relacionadas con una baliza.
+Se obtienen las geocercas asignadas y no asignadas.
+
+[source,http,options="nowrap"]
+----
+POST /
+----
+
+==== Estructura de la solicitud
+include::{snippets}/geocerca-controller-test/get-geocercas/request-fields.adoc[]
+
+==== Estructura de la respuesta
+include::{snippets}/geocerca-controller-test/get-geocercas/response-fields.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/get-geocercas/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/get-geocercas/http-response.adoc[]
+
+[[add-ceocerca]]
+=== Asignar una geocerca a una baliza
+Con una solicitud `POST` se le asigna una geocerca a una baliza.
+
+[source,http,options="nowrap"]
+----
+POST /{elementId}/{dataminerId}/{index}
+----
+
+==== Parámetros de la solicitud
+include::{snippets}/geocerca-controller-test/add-geocerca/path-parameters.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/add-geocerca/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/add-geocerca/http-response.adoc[]
+
+[[activar-ceocerca]]
+=== Activar una geocerca de una baliza
+Con una solicitud `PUT` se activa una geocerca de una baliza.
+
+[source,http,options="nowrap"]
+----
+PUT /{elementId}/{dataminerId}/{index}/activar
+----
+
+==== Parámetros de la solicitud
+include::{snippets}/geocerca-controller-test/activar-geocerca/path-parameters.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/activar-geocerca/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/activar-geocerca/http-response.adoc[]
+
+[[desactivar-ceocerca]]
+=== Desactivar una geocerca de una baliza
+Con una solicitud `PUT` se desactiva una geocerca de una baliza.
+
+[source,http,options="nowrap"]
+----
+PUT /{elementId}/{dataminerId}/{index}/desactivar
+----
+
+==== Parámetros de la solicitud
+include::{snippets}/geocerca-controller-test/desactivar-geocerca/path-parameters.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/desactivar-geocerca/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/desactivar-geocerca/http-response.adoc[]
+
+[[eliminar-ceocerca]]
+=== Eliminar una geocerca de una baliza
+Con una solicitud `DELETE` se elimina una geocerca de una baliza.
+
+[source,http,options="nowrap"]
+----
+DELETE /{elementId}/{dataminerId}/{index}
+----
+
+==== Parámetros de la solicitud
+include::{snippets}/geocerca-controller-test/delete-geocerca/path-parameters.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/delete-geocerca/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/delete-geocerca/http-response.adoc[]
+
+[[estado-ceocerca]]
+=== Obtener el estado de la operación realizada
+Con una solicitud `GET` se obtiene el estado de la operación realizada en la geocerca.
+
+[source,http,options="nowrap"]
+----
+GET /{elementId}/{dataminerId}/estado
+----
+
+==== Parámetros de la solicitud
+include::{snippets}/geocerca-controller-test/get-geocerca-estado/path-parameters.adoc[]
+
+==== Estructura de la respuesta
+include::{snippets}/geocerca-controller-test/get-geocerca-estado/response-fields.adoc[]
+
+==== Ejemplo de solicitud
+include::{snippets}/geocerca-controller-test/get-geocerca-estado/curl-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/geocerca-controller-test/get-geocerca-estado/http-response.adoc[]

@@ -1,0 +1,27 @@
+=== Códigos de estados HTTP
+
+.Códigos de estado retornados por los servicios REST
+[cols="10,20,70",options="header"]
+|===
+| Código | Estado | Uso
+
+| `200`
+| `OK`
+| Solicitud completada con éxito
+
+| `400`
+| `BAD REQUEST`
+| La solicitud fue mal formada. En la respuesta se incluye el error proporcionando la información.
+
+| `404`
+| `NOT FOUND`
+| No se encontró el recurso solicitado.
+
+| `412`
+| `PRECONDITION FAILED`
+| No se le pueden asignar otra geocerca a la baliza por haber alcanzado el límite.
+
+| `500`
+| `INTERNAL_SERVER_ERROR`
+| Error interno no manipulado.
+|===
