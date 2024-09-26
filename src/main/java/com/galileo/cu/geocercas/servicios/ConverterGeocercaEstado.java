@@ -23,7 +23,19 @@ public class ConverterGeocercaEstado implements Converter<Map<String, Object>, G
         estado.setDisplayValue((String) source.get(FIELD_DISPLAY_VALUE));
         estado.setValue((String) source.get(FIELD_VALUE));
         estado.setLastValueChange((String) source.get(FIELD_LASTVALUE_CHANGE));
-        estado.setLastValueChangeUTC((long) source.get(FIELD_LASTVALUE_CHANGEUTC));
+        // estado.setLastValueChangeUTC((long) source.get(FIELD_LASTVALUE_CHANGEUTC));
+        Object value = source.get(FIELD_LASTVALUE_CHANGEUTC);
+        if (value != null) {
+            if (value instanceof Number) {
+                estado.setLastValueChangeUTC(((Number) value).longValue());
+            } else {
+                // Manejar el caso donde el valor no es un número
+                throw new IllegalArgumentException("El valor no es numérico");
+            }
+        } else {
+            // Manejar el caso donde el valor es null
+            throw new NullPointerException("El valor es null");
+        }
 
         return estado;
     }
