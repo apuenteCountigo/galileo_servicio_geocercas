@@ -16,15 +16,14 @@ public class ConverterGeocercaEstado implements Converter<Map<String, Object>, G
     private static final String FIELD_LASTVALUE_CHANGE = "LastValueChange";
     private static final String FIELD_LASTVALUE_CHANGEUTC = "LastValueChangeUTC";
 
-
     @Override
     public GeocercaEstado convert(Map<String, Object> source) {
         GeocercaEstado estado = new GeocercaEstado();
-        estado.setId((Integer)source.get(FIELD_ID));
-        estado.setDisplayValue((String)source.get(FIELD_DISPLAY_VALUE));
-        estado.setValue((String)source.get(FIELD_VALUE));
-        estado.setLastValueChange((String)source.get(FIELD_LASTVALUE_CHANGE));
-        estado.setLastValueChangeUTC((Long) source.get(FIELD_LASTVALUE_CHANGEUTC));
+        estado.setId((Integer) source.get(FIELD_ID));
+        estado.setDisplayValue((String) source.get(FIELD_DISPLAY_VALUE));
+        estado.setValue((String) source.get(FIELD_VALUE));
+        estado.setLastValueChange((String) source.get(FIELD_LASTVALUE_CHANGE));
+        estado.setLastValueChangeUTC((long) source.get(FIELD_LASTVALUE_CHANGEUTC));
 
         return estado;
     }
