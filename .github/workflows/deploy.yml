@@ -55,10 +55,9 @@ jobs:
             git checkout version-1.1 &&
             git reset --hard origin/version-1.1 &&
             git pull &&
-            cd servicio-geocercas &&
             export PATH=/opt/maven/bin:$PATH && mvn clean install -DskipTests &&
             mv ./target/servicio-geocercas-0.0.1-SNAPSHOT.jar ../../servicio-geocercas.jar &&
-            cd ../../../ &&
+            cd ../../ &&
             CONTAINER_NAME="servicio-geocercas" &&
             IMAGE_NAME=$(docker inspect --format='{{.Config.Image}}' "$CONTAINER_NAME") &&
             if [[ -n "$IMAGE_NAME" ]]; then
