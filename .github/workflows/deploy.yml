@@ -46,11 +46,11 @@ jobs:
           script: |
             ssh -i ~/id_rsaalain mome@192.168.0.212 '
             cd galileo-dev-v1.1/geocercas &&
-            if [ ! -d "galileo-servicio-geocercas" ]; then
-              echo "validada galileo-dev-v1.1/geocercas/galileo-servicio-geocercas" &&
-              git clone https://github.com/apuenteCountigo/galileo-servicio-geocercas.git
+            if [ ! -d "galileo_servicio_geocercas" ]; then
+              echo "validada galileo-dev-v1.1/geocercas/galileo_servicio_geocercas" &&
+              git clone https://github.com/apuenteCountigo/galileo_servicio_geocercas.git
             fi
-            cd galileo-servicio-geocercas &&
+            cd galileo_servicio_geocercas &&
             git fetch origin &&
             git checkout version-1.1 &&
             git reset --hard origin/version-1.1 &&
