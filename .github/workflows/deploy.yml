@@ -66,5 +66,10 @@ jobs:
               docker rmi "$IMAGE_NAME" &&
               echo "$IMAGE_NAME"
             fi;
-            docker compose up servicio-geocercas -d'
+            docker compose up servicio-geocercas -d &&
+            while ! docker ps | grep "servicio-geocercas"; do
+              echo "Esperando a que el contenedor esté listo..."
+              sleep 5
+            done
+            docker save -o /home/mome/galileo-images-v1.1.0/servicio-geocercas_1.1.0.tar galileo/servicio-geocercas:1.1.0'
             exit
