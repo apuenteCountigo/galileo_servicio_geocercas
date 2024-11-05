@@ -18,7 +18,7 @@ public class ServicioGeocercasApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("**************************************");
-		System.out.println("GEOCERCAS V1.1.1 24-10-30 17:46");
+		System.out.println("GEOCERCAS V1.1.1 24-11-05 15:42");
 	}
 
 }
